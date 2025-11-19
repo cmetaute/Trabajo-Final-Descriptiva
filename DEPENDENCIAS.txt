@@ -1,0 +1,191 @@
+# ==============================================================================
+# DEPENDENCIAS DEL PROYECTO
+# ==============================================================================
+# Proyecto: Análisis Estadístico Descriptivo - Datos Meteorológicos IDEAM
+# Grupo: 03
+# Fecha: Noviembre 2024
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# REQUISITOS DE SOFTWARE
+# ------------------------------------------------------------------------------
+
+R_VERSION: 4.3.3 o superior (mínimo 4.0.0)
+SISTEMA_OPERATIVO: Linux (Ubuntu 24.04 LTS)
+RSTUDIO: Opcional (recomendado versión 2023.x o superior)
+
+# ------------------------------------------------------------------------------
+# PAQUETES DE R REQUERIDOS
+# ------------------------------------------------------------------------------
+# Formato: nombre_paquete >= version_minima
+# Instalación: install.packages(c("ggplot2", "gridExtra", "scales", "moments", "forecast"))
+
+ggplot2 >= 3.4.0
+  - Propósito: Sistema de visualización de datos
+  - Usado para: Todos los gráficos del análisis
+  - Repositorio: CRAN
+  - URL: https://ggplot2.tidyverse.org/
+
+gridExtra >= 2.3
+  - Propósito: Organización de múltiples gráficos
+  - Usado para: Paneles exploratorios
+  - Repositorio: CRAN
+  - URL: https://cran.r-project.org/package=gridExtra
+
+scales >= 1.2.0
+  - Propósito: Escalas y formatos para gráficos
+  - Usado para: Formateo de ejes y etiquetas
+  - Repositorio: CRAN
+  - URL: https://scales.r-lib.org/
+
+moments >= 0.14
+  - Propósito: Cálculo de momentos estadísticos
+  - Usado para: Asimetría (skewness) y curtosis (kurtosis)
+  - Repositorio: CRAN
+  - URL: https://cran.r-project.org/package=moments
+
+forecast >= 8.20
+  - Propósito: Análisis de series temporales
+  - Usado para: Funciones auxiliares de análisis temporal
+  - Repositorio: CRAN
+  - URL: https://pkg.robjhyndman.com/forecast/
+
+# ------------------------------------------------------------------------------
+# DEPENDENCIAS TRANSITIVAS (instaladas automáticamente)
+# ------------------------------------------------------------------------------
+# Estos paquetes son requeridos por los paquetes principales
+
+Rcpp >= 1.0.0
+  - Requerido por: ggplot2, forecast
+  
+RcppArmadillo >= 0.9.0
+  - Requerido por: forecast
+  
+colorspace >= 2.0.0
+  - Requerido por: ggplot2, scales
+  
+gtable >= 0.1.1
+  - Requerido por: ggplot2, gridExtra
+  
+isoband >= 0.2.0
+  - Requerido por: ggplot2
+  
+munsell >= 0.5.0
+  - Requerido por: scales
+  
+viridisLite >= 0.4.0
+  - Requerido por: ggplot2
+
+# ------------------------------------------------------------------------------
+# COMANDOS DE INSTALACIÓN
+# ------------------------------------------------------------------------------
+
+# Instalación básica (todos los paquetes principales)
+install.packages(c("ggplot2", "gridExtra", "scales", "moments", "forecast"),
+                 dependencies = TRUE,
+                 repos = "https://cloud.r-project.org/")
+
+# Instalación en biblioteca local (si no tienes permisos de administrador)
+lib_local <- "~/R/library"
+dir.create(lib_local, recursive = TRUE, showWarnings = FALSE)
+install.packages(c("ggplot2", "gridExtra", "scales", "moments", "forecast"),
+                 dependencies = TRUE,
+                 repos = "https://cloud.r-project.org/",
+                 lib = lib_local)
+
+# Verificar instalación
+sapply(c("ggplot2", "gridExtra", "scales", "moments", "forecast"),
+       function(pkg) {
+         if (require(pkg, character.only = TRUE, quietly = TRUE)) {
+           paste(pkg, ":", packageVersion(pkg))
+         } else {
+           paste(pkg, ": NO INSTALADO")
+         }
+       })
+
+# ------------------------------------------------------------------------------
+# VERSIONES EXACTAS USADAS EN EL DESARROLLO
+# ------------------------------------------------------------------------------
+# Estas son las versiones con las que se desarrolló y probó el proyecto
+
+R: 4.3.3 (2024-02-29) "Angel Food Cake"
+Platform: x86_64-pc-linux-gnu (64-bit)
+Sistema: Ubuntu 24.04.2 LTS
+
+Paquetes principales:
+  ggplot2     3.5.0
+  gridExtra   2.3
+  scales      1.3.0
+  moments     0.14.1
+  forecast    8.21.1
+
+# ------------------------------------------------------------------------------
+# REPOSITORIO CRAN
+# ------------------------------------------------------------------------------
+
+CRAN_MIRROR: https://cloud.r-project.org/
+FECHA_SNAPSHOT: 2024-11-19
+
+# ------------------------------------------------------------------------------
+# NOTAS ADICIONALES
+# ------------------------------------------------------------------------------
+
+1. El script principal (R/analisis_principal.R) instala automáticamente
+   todos los paquetes necesarios si no están presentes.
+
+2. Si encuentras problemas de instalación, ejecuta primero:
+   source("instalar_dependencias.R")
+
+3. Para verificar que todo está instalado correctamente:
+   source("instalar_dependencias.R")
+
+4. Los paquetes se instalan desde CRAN (Comprehensive R Archive Network),
+   el repositorio oficial de R.
+
+5. No se requieren paquetes de Bioconductor ni GitHub.
+
+6. Todas las dependencias son de código abierto y gratuitas.
+
+# ------------------------------------------------------------------------------
+# COMPATIBILIDAD
+# ------------------------------------------------------------------------------
+
+Versiones de R probadas:
+  - R 4.3.3 (Ubuntu 24.04) ✓ Funciona correctamente
+  - R 4.2.x ✓ Compatible
+  - R 4.1.x ✓ Compatible
+  - R 4.0.x ✓ Compatible (versión mínima)
+  - R 3.x.x ✗ No compatible
+
+Sistemas operativos probados:
+  - Linux (Ubuntu 24.04 LTS) ✓ Funciona correctamente
+  - Windows 10/11 ✓ Compatible
+  - macOS ✓ Compatible
+
+# ------------------------------------------------------------------------------
+# SOLUCIÓN DE PROBLEMAS
+# ------------------------------------------------------------------------------
+
+Si un paquete no se instala:
+
+1. Verificar conexión a internet
+2. Actualizar R a la última versión
+3. Limpiar caché de paquetes: remove.packages("nombre_paquete")
+4. Reinstalar: install.packages("nombre_paquete", dependencies = TRUE)
+5. En Linux, instalar dependencias del sistema:
+   sudo apt-get install r-base-dev libcurl4-openssl-dev libssl-dev libxml2-dev
+
+# ------------------------------------------------------------------------------
+# LICENCIAS
+# ------------------------------------------------------------------------------
+
+Todos los paquetes usados tienen licencias de código abierto:
+  - ggplot2: MIT
+  - gridExtra: GPL-2 | GPL-3
+  - scales: MIT
+  - moments: GPL (>= 2)
+  - forecast: GPL-3
+
+# ==============================================================================
+# FIN DEL ARCHIVO DE DEPENDENCIAS
+# ==============================================================================
