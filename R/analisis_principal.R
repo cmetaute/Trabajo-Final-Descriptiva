@@ -1,29 +1,16 @@
-# ==============================================================================
 # ANÁLISIS ESTADÍSTICO DESCRIPTIVO Y EXPLORATORIO
 # Datos Meteorológicos IDEAM - Estación 26055120
-# ==============================================================================
 # Descripción: Script principal para análisis descriptivo de temperatura y
 #              precipitación
 # Grupo: 03
 # Curso: Estadística Descriptiva y Análisis Exploratorio de Datos
 # Fecha: Noviembre 2024
-# ==============================================================================
 
 # Limpiar entorno
 rm(list = ls())
 gc()
 
-# ==============================================================================
 # 1. CONFIGURACIÓN INICIAL
-# ==============================================================================
-
-cat("\n")
-cat("╔══════════════════════════════════════════════════════════════╗\n")
-cat("║  ANÁLISIS ESTADÍSTICO DESCRIPTIVO Y EXPLORATORIO             ║\n")
-cat("║  Datos Meteorológicos IDEAM - Estación 26055120              ║\n")
-cat("╚══════════════════════════════════════════════════════════════╝\n")
-cat("\n")
-
 # Establecer directorio de trabajo
 setwd("/home/cerrotico/unal/Trabajo-Final-Descriptiva")
 
@@ -47,7 +34,6 @@ for (paquete in paquetes_necesarios) {
     library(paquete, character.only = TRUE, lib.loc = lib_local)
   }
 }
-cat("Todos los paquetes estan listos\n\n")
 
 # Cargar funciones personalizadas
 cat("Cargando funciones personalizadas...\n")
@@ -64,18 +50,7 @@ dir.create("resultados/tablas", recursive = TRUE, showWarnings = FALSE)
 cat("✓ Configuración completada\n\n")
 
 
-# ==============================================================================
 # 2. CARGA DE DATOS
-# ==============================================================================
-
-cat("\n")
-cat("╔══════════════════════════════════════════════════════════════╗\n")
-cat("║  CARGA DE DATOS                                              ║\n")
-cat("╚══════════════════════════════════════════════════════════════╝\n")
-
-# --- PRECIPITACIÓN ---
-cat("\n>>> PRECIPITACIÓN <<<\n")
-
 # Precipitación máxima diaria
 precip_max_diaria <- cargar_csv_ideam(
   "Precipitacion/DataSetExport-PRECIPITACION.PT_10_MX_D@26055120-Maximum-mm-20251115143328.csv",
@@ -89,8 +64,6 @@ precip_total_diaria <- cargar_csv_ideam(
 )
 
 # --- TEMPERATURA ---
-cat("\n>>> TEMPERATURA <<<\n")
-
 # Temperatura mínima media diaria
 temp_min_diaria <- cargar_csv_ideam(
   "Temperatura/DataSetExport-TEMPERATURA.TAMN2_MEDIA_D@26055120-Maximum-degC-20251115143538.csv",
@@ -112,14 +85,7 @@ temp_max_horaria_completa <- agregar_variables_temporales(temp_max_horaria_compl
 cat("\n✓ Todos los datos cargados y preparados\n\n")
 
 
-# ==============================================================================
 # 3. LIMPIEZA DE DATOS
-# ==============================================================================
-
-cat("\n")
-cat("╔══════════════════════════════════════════════════════════════╗\n")
-cat("║  LIMPIEZA DE DATOS                                           ║\n")
-cat("╚══════════════════════════════════════════════════════════════╝\n\n")
 
 # Limpiar valores NA
 precip_max_limpia <- limpiar_na(precip_max_diaria)
@@ -130,14 +96,7 @@ temp_max_limpia <- limpiar_na(temp_max_horaria_completa)
 cat("✓ Limpieza completada\n\n")
 
 
-# ==============================================================================
 # 4. ANÁLISIS DESCRIPTIVO UNIVARIADO - PRECIPITACIÓN
-# ==============================================================================
-
-cat("\n")
-cat("╔══════════════════════════════════════════════════════════════╗\n")
-cat("║  ANÁLISIS DESCRIPTIVO UNIVARIADO - PRECIPITACIÓN             ║\n")
-cat("╚══════════════════════════════════════════════════════════════╝\n")
 
 # --- Precipitación Máxima Diaria ---
 cat("\n" , strrep("=", 60), "\n")
@@ -204,14 +163,7 @@ write.csv(tabla_precip_total,
           row.names = FALSE)
 
 
-# ==============================================================================
 # 5. ANÁLISIS DESCRIPTIVO UNIVARIADO - TEMPERATURA
-# ==============================================================================
-
-cat("\n")
-cat("╔══════════════════════════════════════════════════════════════╗\n")
-cat("║  ANÁLISIS DESCRIPTIVO UNIVARIADO - TEMPERATURA               ║\n")
-cat("╚══════════════════════════════════════════════════════════════╝\n")
 
 # --- Temperatura Mínima Diaria ---
 cat("\n", strrep("=", 60), "\n")
@@ -257,14 +209,7 @@ ggsave("resultados/figuras/temp_min_boxplot.png", g6,
 cat("✓ Visualizaciones guardadas\n")
 
 
-# ==============================================================================
 # 6. ANÁLISIS DE PATRONES TEMPORALES - PRECIPITACIÓN
-# ==============================================================================
-
-cat("\n")
-cat("╔══════════════════════════════════════════════════════════════╗\n")
-cat("║  ANÁLISIS DE PATRONES TEMPORALES - PRECIPITACIÓN             ║\n")
-cat("╚══════════════════════════════════════════════════════════════╝\n")
 
 # Análisis de tendencia
 cat("\n>>> ANÁLISIS DE TENDENCIA <<<\n")
@@ -305,14 +250,7 @@ ggsave("resultados/figuras/precip_max_patron_trimestral.png",
        width = 10, height = 6, dpi = 300)
 
 
-# ==============================================================================
 # 7. ANÁLISIS DE PATRONES TEMPORALES - TEMPERATURA
-# ==============================================================================
-
-cat("\n")
-cat("╔══════════════════════════════════════════════════════════════╗\n")
-cat("║  ANÁLISIS DE PATRONES TEMPORALES - TEMPERATURA               ║\n")
-cat("╚══════════════════════════════════════════════════════════════╝\n")
 
 # Análisis de tendencia
 cat("\n>>> ANÁLISIS DE TENDENCIA <<<\n")
@@ -343,15 +281,8 @@ ggsave("resultados/figuras/temp_min_evolucion_anual.png",
        anual_temp$grafico,
        width = 12, height = 6, dpi = 300)
 
-
-# ==============================================================================
 # 8. ANÁLISIS BIVARIADO - RELACIÓN TEMPERATURA-PRECIPITACIÓN
-# ==============================================================================
 
-cat("\n")
-cat("╔══════════════════════════════════════════════════════════════╗\n")
-cat("║  ANÁLISIS BIVARIADO - TEMPERATURA vs PRECIPITACIÓN           ║\n")
-cat("╚══════════════════════════════════════════════════════════════╝\n\n")
 
 # Preparar datos para análisis bivariado (mismas fechas)
 # Agregar temperatura a datos diarios
@@ -376,9 +307,6 @@ correlacion <- cor(datos_combinados$temperatura,
                   datos_combinados$precipitacion,
                   use = "complete.obs")
 
-cat("╔══════════════════════════════════════════════════════════════╗\n")
-cat("  CORRELACIÓN TEMPERATURA-PRECIPITACIÓN\n")
-cat("╚══════════════════════════════════════════════════════════════╝\n\n")
 cat(sprintf("  Correlación de Pearson: %.4f\n\n", correlacion))
 
 if (abs(correlacion) < 0.3) {
@@ -411,15 +339,7 @@ g_dispersion <- ggplot(datos_combinados,
 ggsave("resultados/figuras/correlacion_temp_precip.png", g_dispersion,
        width = 10, height = 7, dpi = 300)
 
-
-# ==============================================================================
 # 9. DETECCIÓN DE ANOMALÍAS
-# ==============================================================================
-
-cat("\n")
-cat("╔══════════════════════════════════════════════════════════════╗\n")
-cat("║  DETECCIÓN DE ANOMALÍAS                                      ║\n")
-cat("╚══════════════════════════════════════════════════════════════╝\n")
 
 cat("\n>>> PRECIPITACIÓN <<<\n")
 precip_con_anomalias <- detectar_anomalias(precip_max_limpia, n_sd = 3)
@@ -428,14 +348,7 @@ cat("\n>>> TEMPERATURA <<<\n")
 temp_con_anomalias <- detectar_anomalias(temp_min_limpia, n_sd = 3)
 
 
-# ==============================================================================
 # 10. RESUMEN FINAL
-# ==============================================================================
-
-cat("\n\n")
-cat("╔══════════════════════════════════════════════════════════════╗\n")
-cat("║  RESUMEN FINAL DEL ANÁLISIS                                  ║\n")
-cat("╚══════════════════════════════════════════════════════════════╝\n\n")
 
 cat("✓ Análisis completado exitosamente\n\n")
 
@@ -472,6 +385,5 @@ cat(sprintf("• Tendencia temperatura: %s (p=%.4f)\n",
             tendencia_temp$p_valor))
 
 cat("\n")
-cat("═══════════════════════════════════════════════════════════════\n")
 cat("  ANÁLISIS FINALIZADO\n")
-cat("═══════════════════════════════════════════════════════════════\n\n")
+
