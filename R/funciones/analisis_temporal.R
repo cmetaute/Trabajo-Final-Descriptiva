@@ -1,10 +1,8 @@
-# ==============================================================================
 # FUNCIONES PARA ANÁLISIS TEMPORAL
-# ==============================================================================
 # Descripción: Análisis de tendencias, estacionalidad y patrones temporales
 # Autor: Grupo 03
 # Fecha: Noviembre 2024
-# ==============================================================================
+
 
 library(ggplot2)
 library(forecast)
@@ -65,9 +63,6 @@ analisis_tendencia <- function(datos, nombre = "Variable") {
   )
   
   # Imprimir resumen
-  cat("\n╔══════════════════════════════════════════════════════════════╗\n")
-  cat("  ANÁLISIS DE TENDENCIA:", nombre, "\n")
-  cat("╚══════════════════════════════════════════════════════════════╝\n\n")
   cat(sprintf("  Pendiente:           %.6f\n", pendiente))
   cat(sprintf("  R² (ajuste):         %.4f\n", r_cuadrado))
   cat(sprintf("  p-valor:             %.6f\n", p_valor))
@@ -155,10 +150,6 @@ analisis_estacionalidad_mensual <- function(datos, nombre = "Variable", unidad =
     tema_personalizado()
   
   # Imprimir tabla
-  cat("\n╔══════════════════════════════════════════════════════════════╗\n")
-  cat("  ANÁLISIS DE ESTACIONALIDAD MENSUAL:", nombre, "\n")
-  cat("╚══════════════════════════════════════════════════════════════╝\n\n")
-  
   cat(sprintf("%-5s %-8s %-8s %-8s %-8s %-8s\n", 
               "Mes", "Media", "Mediana", "Desv.Est", "Mín", "Máx"))
   cat(strrep("-", 60), "\n")
@@ -247,10 +238,6 @@ analisis_estacionalidad_anual <- function(datos, nombre = "Variable", unidad = "
     theme(axis.text.x = element_text(angle = 45, hjust = 1))
   
   # Imprimir tabla
-  cat("\n╔══════════════════════════════════════════════════════════════╗\n")
-  cat("  ANÁLISIS DE VARIACIÓN ANUAL:", nombre, "\n")
-  cat("╚══════════════════════════════════════════════════════════════╝\n\n")
-  
   cat(sprintf("%-6s %-10s %-10s %-10s %-10s\n", 
               "Año", "Media", "Desv.Est", "Mín", "Máx"))
   cat(strrep("-", 50), "\n")
