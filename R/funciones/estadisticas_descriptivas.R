@@ -1,10 +1,7 @@
-# ==============================================================================
 # FUNCIONES PARA ESTADÍSTICAS DESCRIPTIVAS
-# ==============================================================================
 # Descripción: Cálculo de medidas de tendencia central, dispersión y forma
 # Autor: Grupo 03
 # Fecha: Noviembre 2024
-# ==============================================================================
 
 library(moments)  # Para asimetría y curtosis
 
@@ -113,19 +110,14 @@ calcular_moda <- function(x) {
 #' @export
 imprimir_estadisticas <- function(estadisticas, nombre = "Variable", unidad = "") {
   
-  cat("\n╔══════════════════════════════════════════════════════════════╗\n")
   cat("  ESTADÍSTICAS DESCRIPTIVAS:", nombre, "\n")
-  cat("╚══════════════════════════════════════════════════════════════╝\n\n")
-  
   cat("INFORMACIÓN GENERAL\n")
-  cat("───────────────────────────────────────────────────────────────\n")
   cat(sprintf("  %-30s %10d\n", "Total de observaciones:", estadisticas$n_total))
   cat(sprintf("  %-30s %10d\n", "Valores válidos:", estadisticas$n_validos))
   cat(sprintf("  %-30s %10d (%.1f%%)\n", "Valores faltantes:", 
               estadisticas$n_na, estadisticas$porcentaje_na))
   
   cat("\nMEDIDAS DE TENDENCIA CENTRAL\n")
-  cat("───────────────────────────────────────────────────────────────\n")
   cat(sprintf("  %-30s %10.2f %s\n", "Media:", estadisticas$media, unidad))
   cat(sprintf("  %-30s %10.2f %s\n", "Mediana:", estadisticas$mediana, unidad))
   if (!is.na(estadisticas$moda)) {
@@ -133,7 +125,6 @@ imprimir_estadisticas <- function(estadisticas, nombre = "Variable", unidad = ""
   }
   
   cat("\nMEDIDAS DE DISPERSIÓN\n")
-  cat("───────────────────────────────────────────────────────────────\n")
   cat(sprintf("  %-30s %10.2f %s²\n", "Varianza:", estadisticas$varianza, unidad))
   cat(sprintf("  %-30s %10.2f %s\n", "Desviación estándar:", estadisticas$desviacion_estandar, unidad))
   cat(sprintf("  %-30s %10.2f%%\n", "Coeficiente de variación:", estadisticas$coef_variacion))
@@ -142,7 +133,6 @@ imprimir_estadisticas <- function(estadisticas, nombre = "Variable", unidad = ""
   cat(sprintf("  %-30s %10.2f %s\n", "Error estándar:", estadisticas$error_estandar, unidad))
   
   cat("\nMEDIDAS DE POSICIÓN\n")
-  cat("───────────────────────────────────────────────────────────────\n")
   cat(sprintf("  %-30s %10.2f %s\n", "Mínimo:", estadisticas$minimo, unidad))
   cat(sprintf("  %-30s %10.2f %s\n", "Percentil 5:", estadisticas$p5, unidad))
   cat(sprintf("  %-30s %10.2f %s\n", "Percentil 10:", estadisticas$p10, unidad))
@@ -154,7 +144,6 @@ imprimir_estadisticas <- function(estadisticas, nombre = "Variable", unidad = ""
   cat(sprintf("  %-30s %10.2f %s\n", "Máximo:", estadisticas$maximo, unidad))
   
   cat("\nMEDIDAS DE FORMA\n")
-  cat("───────────────────────────────────────────────────────────────\n")
   cat(sprintf("  %-30s %10.2f\n", "Asimetría (Skewness):", estadisticas$asimetria))
   
   # Interpretación de asimetría
