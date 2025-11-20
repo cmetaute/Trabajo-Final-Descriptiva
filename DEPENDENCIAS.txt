@@ -1,22 +1,14 @@
-# ==============================================================================
 # DEPENDENCIAS DEL PROYECTO
-# ==============================================================================
 # Proyecto: Análisis Estadístico Descriptivo - Datos Meteorológicos IDEAM
 # Grupo: 03
 # Fecha: Noviembre 2024
-# ==============================================================================
 
-# ------------------------------------------------------------------------------
 # REQUISITOS DE SOFTWARE
-# ------------------------------------------------------------------------------
-
 R_VERSION: 4.3.3 o superior (mínimo 4.0.0)
 SISTEMA_OPERATIVO: Linux (Ubuntu 24.04 LTS)
 RSTUDIO: Opcional (recomendado versión 2023.x o superior)
 
-# ------------------------------------------------------------------------------
 # PAQUETES DE R REQUERIDOS
-# ------------------------------------------------------------------------------
 # Formato: nombre_paquete >= version_minima
 # Instalación: install.packages(c("ggplot2", "gridExtra", "scales", "moments", "forecast"))
 
@@ -50,9 +42,7 @@ forecast >= 8.20
   - Repositorio: CRAN
   - URL: https://pkg.robjhyndman.com/forecast/
 
-# ------------------------------------------------------------------------------
 # DEPENDENCIAS TRANSITIVAS (instaladas automáticamente)
-# ------------------------------------------------------------------------------
 # Estos paquetes son requeridos por los paquetes principales
 
 Rcpp >= 1.0.0
@@ -76,10 +66,7 @@ munsell >= 0.5.0
 viridisLite >= 0.4.0
   - Requerido por: ggplot2
 
-# ------------------------------------------------------------------------------
 # COMANDOS DE INSTALACIÓN
-# ------------------------------------------------------------------------------
-
 # Instalación básica (todos los paquetes principales)
 install.packages(c("ggplot2", "gridExtra", "scales", "moments", "forecast"),
                  dependencies = TRUE,
@@ -103,9 +90,7 @@ sapply(c("ggplot2", "gridExtra", "scales", "moments", "forecast"),
          }
        })
 
-# ------------------------------------------------------------------------------
 # VERSIONES EXACTAS USADAS EN EL DESARROLLO
-# ------------------------------------------------------------------------------
 # Estas son las versiones con las que se desarrolló y probó el proyecto
 
 R: 4.3.3 (2024-02-29) "Angel Food Cake"
@@ -119,17 +104,13 @@ Paquetes principales:
   moments     0.14.1
   forecast    8.21.1
 
-# ------------------------------------------------------------------------------
-# REPOSITORIO CRAN
-# ------------------------------------------------------------------------------
 
+# REPOSITORIO CRAN
 CRAN_MIRROR: https://cloud.r-project.org/
 FECHA_SNAPSHOT: 2024-11-19
 
-# ------------------------------------------------------------------------------
-# NOTAS ADICIONALES
-# ------------------------------------------------------------------------------
 
+# NOTAS ADICIONALES
 1. El script principal (R/analisis_principal.R) instala automáticamente
    todos los paquetes necesarios si no están presentes.
 
@@ -146,10 +127,7 @@ FECHA_SNAPSHOT: 2024-11-19
 
 6. Todas las dependencias son de código abierto y gratuitas.
 
-# ------------------------------------------------------------------------------
 # COMPATIBILIDAD
-# ------------------------------------------------------------------------------
-
 Versiones de R probadas:
   - R 4.3.3 (Ubuntu 24.04) ✓ Funciona correctamente
   - R 4.2.x ✓ Compatible
@@ -162,10 +140,8 @@ Sistemas operativos probados:
   - Windows 10/11 ✓ Compatible
   - macOS ✓ Compatible
 
-# ------------------------------------------------------------------------------
-# SOLUCIÓN DE PROBLEMAS
-# ------------------------------------------------------------------------------
 
+# SOLUCIÓN DE PROBLEMAS
 Si un paquete no se instala:
 
 1. Verificar conexión a internet
@@ -175,10 +151,8 @@ Si un paquete no se instala:
 5. En Linux, instalar dependencias del sistema:
    sudo apt-get install r-base-dev libcurl4-openssl-dev libssl-dev libxml2-dev
 
-# ------------------------------------------------------------------------------
-# LICENCIAS
-# ------------------------------------------------------------------------------
 
+# LICENCIAS
 Todos los paquetes usados tienen licencias de código abierto:
   - ggplot2: MIT
   - gridExtra: GPL-2 | GPL-3
