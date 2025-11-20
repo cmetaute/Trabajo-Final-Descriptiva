@@ -1,10 +1,7 @@
-# ==============================================================================
 # FUNCIONES PARA VISUALIZACIONES
-# ==============================================================================
 # Descripción: Gráficos para análisis descriptivo y exploratorio
 # Autor: Grupo 03
 # Fecha: Noviembre 2024
-# ==============================================================================
 
 library(ggplot2)
 library(gridExtra)
