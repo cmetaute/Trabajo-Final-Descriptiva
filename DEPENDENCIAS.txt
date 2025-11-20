@@ -160,6 +160,4 @@ Todos los paquetes usados tienen licencias de código abierto:
   - moments: GPL (>= 2)
   - forecast: GPL-3
 
-# ==============================================================================
 # FIN DEL ARCHIVO DE DEPENDENCIAS
-# ==============================================================================
