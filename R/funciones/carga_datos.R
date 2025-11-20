@@ -1,10 +1,7 @@
-# ==============================================================================
 # FUNCIONES PARA CARGA Y LIMPIEZA DE DATOS METEOROLÓGICOS IDEAM
-# ==============================================================================
 # Descripción: Funciones para cargar archivos CSV del IDEAM y preprocesarlos
 # Autor: Grupo 03
 # Fecha: Noviembre 2024
-# ==============================================================================
 
 #' Cargar archivo CSV del IDEAM
 #'
@@ -53,9 +50,7 @@ cargar_csv_ideam <- function(ruta_archivo, nombre_variable = NULL) {
   }
   
   # Información del dataset cargado
-  cat("\n=======================================================\n")
   cat("Dataset cargado:", ifelse(!is.null(nombre_variable), nombre_variable, basename(ruta_archivo)), "\n")
-  cat("=======================================================\n")
   cat("Archivo:", basename(ruta_archivo), "\n")
   cat("Período:", format(min(datos$fecha, na.rm = TRUE), "%Y-%m-%d"), "a", 
       format(max(datos$fecha, na.rm = TRUE), "%Y-%m-%d"), "\n")
@@ -63,7 +58,7 @@ cargar_csv_ideam <- function(ruta_archivo, nombre_variable = NULL) {
   cat("Valores válidos:", sum(!is.na(datos$valor)), "\n")
   cat("Valores faltantes (NA):", sum(is.na(datos$valor)), 
       sprintf("(%.1f%%)", sum(is.na(datos$valor))/nrow(datos)*100), "\n")
-  cat("=======================================================\n\n")
+
   
   return(datos)
 }
@@ -160,9 +155,8 @@ detectar_atipicos <- function(datos, factor_iqr = 1.5) {
 #' @export
 resumen_dataset <- function(datos, nombre = "Dataset") {
   
-  cat("\n╔════════════════════════════════════════════════════════╗\n")
   cat("  RESUMEN:", nombre, "\n")
-  cat("╚════════════════════════════════════════════════════════╝\n\n")
+
   
   cat("Estructura:\n")
   cat("  - Dimensiones:", nrow(datos), "filas x", ncol(datos), "columnas\n")
