@@ -1,9 +1,7 @@
-# ==============================================================================
 # EJEMPLOS DE USO - Funciones Personalizadas
-# ==============================================================================
 # Descripción: Ejemplos prácticos de cómo usar las funciones del proyecto
 # Grupo: 03
-# ==============================================================================
+
 
 # Establecer directorio de trabajo
 setwd("/home/cerrotico/unal/Trabajo-Final-Descriptiva")
@@ -19,13 +17,7 @@ library(ggplot2)
 library(gridExtra)
 library(moments)
 
-
-# ==============================================================================
 # EJEMPLO 1: Cargar y explorar un dataset
-# ==============================================================================
-
-cat("\n=== EJEMPLO 1: Cargar datos ===\n\n")
-
 # Cargar datos de precipitación
 datos_precip <- cargar_csv_ideam(
   "Precipitacion/DataSetExport-PRECIPITACION.PT_10_MX_D@26055120-Maximum-mm-20251115143328.csv",
@@ -39,12 +31,7 @@ head(datos_precip)
 resumen_dataset(datos_precip, "Precipitación Máxima Diaria")
 
 
-# ==============================================================================
 # EJEMPLO 2: Agregar variables temporales
-# ==============================================================================
-
-cat("\n=== EJEMPLO 2: Variables temporales ===\n\n")
-
 # Agregar variables de tiempo
 datos_precip <- agregar_variables_temporales(datos_precip)
 
@@ -55,12 +42,7 @@ colnames(datos_precip)
 head(datos_precip[, c("fecha", "valor", "anio", "mes", "trimestre")])
 
 
-# ==============================================================================
 # EJEMPLO 3: Limpiar datos
-# ==============================================================================
-
-cat("\n=== EJEMPLO 3: Limpieza de datos ===\n\n")
-
 # Limpiar valores NA
 datos_limpios <- limpiar_na(datos_precip, verbose = TRUE)
 
@@ -71,12 +53,7 @@ datos_con_atipicos <- detectar_atipicos(datos_limpios, factor_iqr = 1.5)
 table(datos_con_atipicos$es_atipico)
 
 
-# ==============================================================================
 # EJEMPLO 4: Calcular estadísticas descriptivas
-# ==============================================================================
-
-cat("\n=== EJEMPLO 4: Estadísticas descriptivas ===\n\n")
-
 # Calcular todas las estadísticas
 estadisticas <- calcular_estadisticas(datos_limpios, 
                                      "Precipitación Máxima Diaria", 
@@ -93,12 +70,7 @@ print(tabla)
 # write.csv(tabla, "mi_tabla_estadisticas.csv", row.names = FALSE)
 
 
-# ==============================================================================
 # EJEMPLO 5: Crear visualizaciones básicas
-# ==============================================================================
-
-cat("\n=== EJEMPLO 5: Visualizaciones básicas ===\n\n")
-
 # Serie temporal
 g1 <- grafico_serie_temporal(
   datos_limpios,
@@ -130,12 +102,7 @@ g3 <- grafico_boxplot(
 print(g3)
 
 
-# ==============================================================================
 # EJEMPLO 6: Boxplots por grupos
-# ==============================================================================
-
-cat("\n=== EJEMPLO 6: Boxplots por grupos ===\n\n")
-
 # Boxplot por mes
 g4 <- grafico_boxplot_grupos(
   datos_limpios,
@@ -159,12 +126,7 @@ g5 <- grafico_boxplot_grupos(
 print(g5)
 
 
-# ==============================================================================
 # EJEMPLO 7: Análisis de tendencia
-# ==============================================================================
-
-cat("\n=== EJEMPLO 7: Análisis de tendencia ===\n\n")
-
 # Analizar tendencia
 resultado_tendencia <- analisis_tendencia(datos_limpios, 
                                          "Precipitación Máxima Diaria")
@@ -179,11 +141,7 @@ cat("p-valor:", resultado_tendencia$p_valor, "\n")
 cat("¿Es significativo?:", resultado_tendencia$significativo, "\n")
 
 
-# ==============================================================================
 # EJEMPLO 8: Análisis de estacionalidad mensual
-# ==============================================================================
-
-cat("\n=== EJEMPLO 8: Estacionalidad mensual ===\n\n")
 
 # Analizar patrón mensual
 resultado_mensual <- analisis_estacionalidad_mensual(
@@ -204,10 +162,7 @@ cat("\nMes con mayor precipitación:", resultado_mensual$mes_maximo, "\n")
 cat("Mes con menor precipitación:", resultado_mensual$mes_minimo, "\n")
 
 
-# ==============================================================================
 # EJEMPLO 9: Análisis de variación anual
-# ==============================================================================
-
 cat("\n=== EJEMPLO 9: Variación anual ===\n\n")
 
 # Analizar evolución anual
@@ -224,12 +179,7 @@ print(resultado_anual$grafico)
 print(resultado_anual$estadisticas)
 
 
-# ==============================================================================
 # EJEMPLO 10: Análisis de ciclos intraanuales
-# ==============================================================================
-
-cat("\n=== EJEMPLO 10: Ciclos intraanuales ===\n\n")
-
 # Análisis por trimestres
 resultado_trimestral <- analisis_ciclos_intraanuales(
   datos_limpios,
@@ -247,12 +197,7 @@ resultado_semestral <- analisis_ciclos_intraanuales(
 print(resultado_semestral$grafico)
 
 
-# ==============================================================================
 # EJEMPLO 11: Estadísticas por período
-# ==============================================================================
-
-cat("\n=== EJEMPLO 11: Estadísticas por período ===\n\n")
-
 # Estadísticas por año
 stats_por_anio <- estadisticas_por_periodo(datos_limpios, agrupar_por = "anio")
 print(stats_por_anio)
@@ -262,12 +207,7 @@ stats_por_mes <- estadisticas_por_periodo(datos_limpios, agrupar_por = "mes")
 print(stats_por_mes)
 
 
-# ==============================================================================
 # EJEMPLO 12: Gráfico de promedios por período
-# ==============================================================================
-
-cat("\n=== EJEMPLO 12: Promedios por período ===\n\n")
-
 # Promedios mensuales (barras)
 g6 <- grafico_promedios_periodo(
   datos_limpios,
@@ -291,11 +231,7 @@ g7 <- grafico_promedios_periodo(
 print(g7)
 
 
-# ==============================================================================
 # EJEMPLO 13: Detectar anomalías
-# ==============================================================================
-
-cat("\n=== EJEMPLO 13: Detección de anomalías ===\n\n")
 
 # Detectar anomalías (3 desviaciones estándar)
 datos_con_anomalias <- detectar_anomalias(datos_limpios, n_sd = 3)
@@ -319,11 +255,7 @@ g8 <- ggplot(datos_con_anomalias, aes(x = fecha, y = valor)) +
 print(g8)
 
 
-# ==============================================================================
 # EJEMPLO 14: Análisis bivariado (correlación)
-# ==============================================================================
-
-cat("\n=== EJEMPLO 14: Análisis bivariado ===\n\n")
 
 # Cargar segundo dataset (temperatura)
 datos_temp <- cargar_csv_ideam(
@@ -343,12 +275,7 @@ g9 <- grafico_dispersion(
 print(g9)
 
 
-# ==============================================================================
 # EJEMPLO 15: Panel exploratorio completo
-# ==============================================================================
-
-cat("\n=== EJEMPLO 15: Panel exploratorio completo ===\n\n")
-
 # Crear panel con múltiples gráficos
 panel_exploratorio(
   datos_limpios,
@@ -356,19 +283,3 @@ panel_exploratorio(
   unidad = "mm",
   color = "steelblue"
 )
-
-
-# ==============================================================================
-# FIN DE LOS EJEMPLOS
-# ==============================================================================
-
-cat("\n")
-cat("╔══════════════════════════════════════════════════════════════╗\n")
-cat("║  EJEMPLOS COMPLETADOS                                        ║\n")
-cat("╚══════════════════════════════════════════════════════════════╝\n")
-cat("\n")
-cat("Ahora puedes:\n")
-cat("  1. Modificar estos ejemplos según tus necesidades\n")
-cat("  2. Ejecutar el análisis completo con: source('R/analisis_principal.R')\n")
-cat("  3. Crear tus propios análisis usando las funciones\n")
-cat("\n")
