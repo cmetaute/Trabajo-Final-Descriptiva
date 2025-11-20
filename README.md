@@ -375,8 +375,8 @@ gc()
 - [x] Tablas de estadísticas exportadas
 - [x] Documentación completa (README + CONTEXTO_DATOS)
 - [x] Código reproducible 100%
-- [x] Propuesta de póster (pendiente)
-- [x] Conclusiones finales (pendiente)
+- [x] Propuesta de póster 
+- [x] Conclusiones finales 
 
 ---
 
