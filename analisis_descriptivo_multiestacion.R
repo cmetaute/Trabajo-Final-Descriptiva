@@ -3,7 +3,7 @@
 # Datos Meteorológicos IDEAM - Análisis Multi-Estación
 # ==============================================================================
 # Descripción: Análisis descriptivo y exploratorio de precipitación y 
-#              temperatura de 7 estaciones meteorológicas en Cali, Colombia
+#              temperatura de 6 estaciones meteorológicas en Valle del Cauca, Colombia
 # Fuente: IDEAM (http://aquariuswebportal.ideam.gov.co)
 # Grupo: 03
 # Fecha: Noviembre 2024
@@ -16,7 +16,7 @@ gc()
 cat("\n")
 cat("╔══════════════════════════════════════════════════════════════╗\n")
 cat("║  ANÁLISIS DESCRIPTIVO Y EXPLORATORIO MULTI-ESTACIÓN          ║\n")
-cat("║  Datos Meteorológicos IDEAM - Cali, Colombia                 ║\n")
+cat("║  Datos Meteorológicos IDEAM - Valle del Cauca, Colombia      ║\n")
 cat("╚══════════════════════════════════════════════════════════════╝\n")
 cat("\n")
 
@@ -53,11 +53,11 @@ cat("Todos los paquetes están listos\n\n")
 
 # Información de las estaciones meteorológicas
 estaciones <- data.frame(
-  codigo = c("26055120", "26075150", "26095320", "26055100", 
+  codigo = c("26055120", "26095320", "26055100", 
              "26075120", "26055110", "26085160"),
-  nombre = c("UDV", "Aeropuerto Bonilla", "El Vínculo", "Farallones",
+  nombre = c("Universidad del Valle", "El Vínculo", "Farallones",
              "La Diana", "La Independencia", "Siloé"),
-  nombre_corto = c("UDV", "Aeropuerto", "ElVinculo", "Farallones",
+  nombre_corto = c("UniversidadDelValle", "ElVinculo", "Farallones",
                    "LaDiana", "LaIndependencia", "Siloe"),
   stringsAsFactors = FALSE
 )
@@ -228,7 +228,7 @@ p1 <- ggplot(datos_precip, aes(x = reorder(estacion, valor, FUN = median),
   geom_boxplot(outlier.size = 0.5, outlier.alpha = 0.3) +
   coord_flip() +
   labs(title = "Distribución de Precipitación Máxima Diaria por Estación",
-       subtitle = "Comparación entre 7 estaciones meteorológicas - Cali",
+       subtitle = "Comparación entre 6 estaciones meteorológicas - Valle del Cauca",
        x = "Estación",
        y = "Precipitación (mm)") +
   tema_personalizado +
@@ -248,7 +248,7 @@ p2 <- ggplot(datos_temp, aes(x = reorder(estacion, valor, FUN = median),
   geom_boxplot(outlier.size = 0.5, outlier.alpha = 0.3) +
   coord_flip() +
   labs(title = "Distribución de Temperatura por Estación",
-       subtitle = "Comparación entre 7 estaciones meteorológicas - Cali",
+       subtitle = "Comparación entre 6 estaciones meteorológicas - Valle del Cauca",
        x = "Estación",
        y = "Temperatura (°C)") +
   tema_personalizado +
