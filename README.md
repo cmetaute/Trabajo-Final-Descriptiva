@@ -206,11 +206,11 @@ Para cada estación se calculan:
 
 3. **precip_series_temporales.png**
    - Evolución temporal de precipitación mensual
-   - Panel con 7 estaciones
+   - Panel con 6 estaciones
 
 4. **temp_series_temporales.png**
    - Evolución temporal de temperatura diaria
-   - Panel con 7 estaciones
+   - Panel con 6 estaciones
 
 5. **precip_patron_estacional.png**
    - Patrón mensual de precipitación
@@ -226,7 +226,7 @@ Para cada estación se calculan:
 
 8. **precip_histogramas.png**
    - Distribución de frecuencias
-   - Panel con 7 estaciones
+   - Panel con 6 estaciones
 
 9. **precip_variabilidad_anual.png**
    - Precipitación total anual
@@ -256,7 +256,7 @@ Para cada estación se calculan:
 
 **Variabilidad espacial:**
 - Estaciones de mayor elevación (Farallones) muestran mayor precipitación
-- Estaciones urbanas (Siloé, UDV) tienen patrones similares
+- Estaciones urbanas (Siloé, Universidad del Valle) tienen patrones similares
 - Correlaciones altas entre estaciones cercanas
 
 ### Temperatura
@@ -285,7 +285,7 @@ Para cada estación se calculan:
 ### Selección y Descarga
 - [x] Fuente clara y reproducible (IDEAM)
 - [x] Justificación de variables (precipitación y temperatura)
-- [x] Región definida (Cali, Colombia)
+- [x] Región definida (Valle del Cauca, Colombia)
 - [x] Período temporal documentado
 - [x] Más de 1000 registros (605,893 registros totales)
 
@@ -330,7 +330,7 @@ Para cada estación se calculan:
 
 Este análisis se diferencia del trabajo previo en:
 
-1. **Múltiples estaciones:** Análisis comparativo de 7 estaciones (antes 1)
+1. **Múltiples estaciones:** Análisis comparativo de 6 estaciones (antes 1)
 2. **Enfoque descriptivo puro:** Sin modelos de regresión lineal
 3. **Análisis espacial:** Comparación entre ubicaciones
 4. **Visualizaciones mejoradas:** Gráficos más ilustrativos y comparativos
@@ -382,7 +382,7 @@ Ver `REPRODUCIBILIDAD.md` para guía completa.
 Según requisitos del proyecto:
 
 1. **Código R:** `analisis_descriptivo_multiestacion.R` ✓
-2. **Datos:** Carpeta `datos/` con 14 archivos CSV ✓
+2. **Datos:** Carpeta `datos/` con 12 archivos CSV ✓
 3. **Informe PDF:** (Preparado por compañera de grupo)
 4. **Póster:** (Ya completado según profesor)
 
@@ -405,7 +405,7 @@ Para problemas de reproducibilidad:
 
 - **IDEAM:** Instituto de Hidrología, Meteorología y Estudios Ambientales de Colombia
 - **Portal:** http://aquariuswebportal.ideam.gov.co
-- **Región:** Cali, Valle del Cauca
+- **Región:**  Valle del Cauca
 - **Documentación R:** https://www.r-project.org/
 - **ggplot2:** https://ggplot2.tidyverse.org/
 - **dplyr:** https://dplyr.tidyverse.org/
@@ -421,5 +421,5 @@ Los datos son de dominio público, proporcionados por IDEAM para uso académico 
 **Última actualización:** Noviembre 2024  
 **Grupo:** 03  
 **Total de registros:** 605,893 (16,319 precipitación + 589,574 temperatura)  
-**Total de estaciones:** 7  
+**Total de estaciones:** 6  
 **Período de análisis:** 2011-2024
