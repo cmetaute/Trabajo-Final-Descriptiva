@@ -1,0 +1,78 @@
+================================================================================
+INSTRUCCIONES PARA COMPRIMIR Y ENTREGAR EL TRABAJO
+================================================================================
+
+OPCIÓN 1: Desde Terminal (Linux/Mac)
+-------------------------------------
+
+cd /home/cerrotico/unal/
+zip -r Trabajo-Final-Descriptiva-Grupo03.zip Trabajo-Final-Descriptiva/ \
+    -x "Trabajo-Final-Descriptiva/.git/*" \
+    -x "Trabajo-Final-Descriptiva/INSTRUCCIONES_COMPRESION.txt"
+
+OPCIÓN 2: Desde Interfaz Gráfica
+---------------------------------
+
+1. Ir a la carpeta: /home/cerrotico/unal/
+2. Click derecho en "Trabajo-Final-Descriptiva"
+3. Seleccionar "Comprimir" o "Crear archivo comprimido"
+4. Nombrar: Trabajo-Final-Descriptiva-Grupo03.zip
+5. Asegurarse de EXCLUIR la carpeta .git
+
+OPCIÓN 3: Comando Específico (Recomendado)
+-------------------------------------------
+
+cd /home/cerrotico/unal/Trabajo-Final-Descriptiva
+zip -r ../Trabajo-Final-Descriptiva-Grupo03.zip \
+    analisis_descriptivo_multiestacion.R \
+    README.md \
+    RESUMEN_ENTREGA.md \
+    datos/ \
+    resultados/
+
+================================================================================
+ARCHIVOS QUE DEBEN ESTAR EN EL ZIP
+================================================================================
+
+1. analisis_descriptivo_multiestacion.R  (Script principal)
+2. README.md                             (Documentación)
+3. RESUMEN_ENTREGA.md                    (Resumen de entrega)
+4. datos/precipitacion/                  (7 archivos CSV)
+5. datos/temperatura/                    (7 archivos CSV)
+6. resultados/figuras/                   (10 archivos PNG)
+7. resultados/tablas/                    (2 archivos CSV)
+
+TOTAL: 22 archivos + 3 documentos + estructura de carpetas
+
+================================================================================
+ARCHIVOS QUE NO DEBEN INCLUIRSE
+================================================================================
+
+- Carpeta .git/
+- Este archivo (INSTRUCCIONES_COMPRESION.txt)
+- Archivos temporales o de respaldo
+
+================================================================================
+VERIFICACIÓN ANTES DE ENTREGAR
+================================================================================
+
+1. Tamaño del ZIP: Debe ser < 5 MB
+2. Número de archivos: ~25 archivos
+3. Estructura de carpetas intacta
+4. README.md incluido
+
+Para verificar el contenido del ZIP:
+unzip -l Trabajo-Final-Descriptiva-Grupo03.zip
+
+================================================================================
+ENTREGA FINAL
+================================================================================
+
+Entregar en la plataforma del curso:
+
+1. Trabajo-Final-Descriptiva-Grupo03.zip  (Este archivo)
+2. Informe-Grupo03.pdf                    (Preparado por compañera)
+
+NOTA: El póster ya fue entregado según indicación del profesor.
+
+================================================================================
