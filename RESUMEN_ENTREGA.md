@@ -21,18 +21,16 @@
 
 **Ubicación:** Carpeta `datos/`
 
-**Precipitación** (7 estaciones):
-- `datos/precipitacion/UDV_DataSetExport-PRECIPITACION.PT_10_MX_D@26055120-Maximum-mm-20251120233010.csv`
-- `datos/precipitacion/AeropuertoBonilla_DataSetExport-PRECIPITACION.PT_10_MX_D@26075150-Maximum-mm-20251120232851.csv`
+**Precipitación** (6 estaciones):
+- `datos/precipitacion/UniversidadDelValle_DataSetExport-PRECIPITACION.PT_10_MX_D@26055120-Maximum-mm-20251120233010.csv`
 - `datos/precipitacion/ElVinculo_DataSetExport-PRECIPITACION.PT_10_MX_D@26095320-Maximum-mm-20251120233248.csv`
 - `datos/precipitacion/Farallones_DataSetExport-PRECIPITACION.PT_10_MX_D@26055100-Maximum-mm-20251120233358.csv`
 - `datos/precipitacion/LaDiana_DataSetExport-PRECIPITACION.PT_10_MX_D@26075120-Maximum-mm-20251120233455.csv`
 - `datos/precipitacion/LaIndependencia_DataSetExport-PRECIPITACION.PT_10_MX_D@26055110-Maximum-mm-20251120233614.csv`
 - `datos/precipitacion/Siloe_DataSetExport-PRECIPITACION.PT_10_MX_D@26085160-Maximum-mm-20251120233140.csv`
 
-**Temperatura** (7 estaciones):
-- `datos/temperatura/UDV_DataSetExport-TEMPERATURA.TA2_AUT_60@26055120-Maximum-degC-20251120231150.csv`
-- `datos/temperatura/AeropuertoBonilla_DataSetExport-TEMPERATURA.TA2_AUT_60@26075150-Maximum-degC-20251120230935.csv`
+**Temperatura** (6 estaciones):
+- `datos/temperatura/UniversidadDelValle_DataSetExport-TEMPERATURA.TA2_AUT_60@26055120-Maximum-degC-20251120231150.csv`
 - `datos/temperatura/ElVinculo_DataSetExport-TEMPERATURA.TA2_AUT_60@26095320-Maximum-degC-20251120232101.csv`
 - `datos/temperatura/Farallones_DataSetExport-TEMPERATURA.TA2_AUT_60@26055100-Maximum-degC-20251120231354.csv`
 - `datos/temperatura/LaDiana_DataSetExport-TEMPERATURA.TA2_AUT_60@26075120-Maximum-degC-20251120231750.csv`
@@ -77,7 +75,7 @@
 #### 1. Selección y Descarga (3/3 puntos)
 
 - [x] **Selección clara y justificada**
-  - 7 estaciones meteorológicas en Cali
+  - 6 estaciones meteorológicas en Valle del Cauca
   - 2 variables: Precipitación y Temperatura
   - Región bien definida
   - Período temporal documentado (2011-2024)
@@ -184,7 +182,7 @@
 
 2. **Análisis multi-estación**
    - ❌ Antes: 1 estación
-   - ✓ Ahora: 7 estaciones comparativas
+   - ✓ Ahora: 6 estaciones comparativas
 
 3. **Enfoque espacial**
    - ✓ Comparación entre ubicaciones
@@ -208,9 +206,9 @@
 
 ### Datos
 
-- **Estaciones:** 7
+- **Estaciones:** 6
 - **Variables:** 2 (Precipitación, Temperatura)
-- **Archivos CSV:** 14
+- **Archivos CSV:** 12
 - **Total registros:** 605,893
 - **Período:** 2011-2024 (13 años)
 - **Tamaño datos:** < 2 MB
@@ -277,8 +275,8 @@ Trabajo-Final-Descriptiva.zip
 ├── README.md
 ├── RESUMEN_ENTREGA.md
 ├── datos/
-│   ├── precipitacion/ (7 archivos CSV)
-│   └── temperatura/ (7 archivos CSV)
+│   ├── precipitacion/ (6 archivos CSV)
+│   └── temperatura/ (6 archivos CSV)
 └── resultados/
     ├── figuras/ (10 archivos PNG)
     └── tablas/ (2 archivos CSV)
@@ -299,7 +297,7 @@ Trabajo-Final-Descriptiva.zip
 ## Checklist Final
 
 - [x] Código R funcional
-- [x] Bases de datos incluidas (14 archivos CSV)
+- [x] Bases de datos incluidas (12 archivos CSV)
 - [x] Resultados generados (2 tablas + 10 figuras)
 - [x] Documentación completa (README.md)
 - [x] Más de 1000 registros (605,893)

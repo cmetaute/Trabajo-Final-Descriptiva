@@ -1,5 +1,5 @@
 # Análisis Estadístico Descriptivo y Exploratorio
-## Datos Meteorológicos IDEAM - Cali, Colombia
+## Datos Meteorológicos IDEAM - Valle del Cauca, Colombia
 
 **Grupo:** 03  
 **Curso:** Estadística Descriptiva y Análisis Exploratorio de Datos  
@@ -9,7 +9,7 @@
 
 ## Descripción del Proyecto
 
-Este proyecto presenta un análisis estadístico descriptivo y exploratorio de datos meteorológicos de **7 estaciones** ubicadas en Cali, Colombia. Los datos fueron obtenidos del portal IDEAM (Instituto de Hidrología, Meteorología y Estudios Ambientales).
+Este proyecto presenta un análisis estadístico descriptivo y exploratorio de datos meteorológicos de **6 estaciones** ubicadas en Valle del Cauca, Colombia. Los datos fueron obtenidos del portal IDEAM (Instituto de Hidrología, Meteorología y Estudios Ambientales).
 
 ### Objetivos
 
@@ -24,7 +24,7 @@ Este proyecto presenta un análisis estadístico descriptivo y exploratorio de d
 ## Fuente de Datos
 
 **Portal:** http://aquariuswebportal.ideam.gov.co  
-**Región:** Cali, Valle del Cauca, Colombia  
+**Región:** Valle del Cauca, Colombia  
 **Período:** 2011-2024 (varía por estación)  
 **Resolución temporal:**
 - Precipitación: Diaria (máxima en 24h)
@@ -34,8 +34,7 @@ Este proyecto presenta un análisis estadístico descriptivo y exploratorio de d
 
 | Código | Nombre | Ubicación |
 |--------|--------|-----------|
-| 26055120 | UDV | Universidad del Valle |
-| 26075150 | Aeropuerto Bonilla | Aeropuerto Alfonso Bonilla Aragón |
+| 26055120 | Universidad del Valle | Universidad del Valle |
 | 26095320 | El Vínculo | Sector El Vínculo |
 | 26055100 | Farallones | Parque Nacional Farallones |
 | 26075120 | La Diana | Sector La Diana |
@@ -61,8 +60,8 @@ Este proyecto presenta un análisis estadístico descriptivo y exploratorio de d
 ```
 Trabajo-Final-Descriptiva/
 ├── datos/
-│   ├── precipitacion/          # 7 archivos CSV de precipitación
-│   └── temperatura/            # 7 archivos CSV de temperatura
+│   ├── precipitacion/          # 6 archivos CSV de precipitación
+│   └── temperatura/            # 6 archivos CSV de temperatura
 ├── resultados/
 │   ├── figuras/                # 10 gráficos PNG (300 DPI)
 │   └── tablas/                 # 2 tablas CSV con estadísticas
